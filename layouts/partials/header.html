@@ -1,0 +1,42 @@
+<header class="mdui-appbar mdui-appbar-fixed">
+    <div class="mdui-toolbar mdui-color-theme">
+        <a href="javascript:;" class="mdui-btn mdui-btn-icon" mdui-drawer="{target: '#left-drawer'}"><i class="mdui-icon material-icons">&#xe5d2;</i></a>
+        <span class="mdui-typo-title mdui-typo self-site-title">
+            <a class="mdui-text-color-white-text" href="{{ .Site.BaseURL }}">{{ .Site.Title }}</a>
+        </span>
+        <div class="mdui-toolbar-spacer"></div>
+        <a href="javascript:;" class="mdui-btn mdui-btn-icon"><i class="mdui-icon material-icons">&#xe8b6;</i></a>
+        <a href="javascript:;" class="mdui-btn mdui-btn-icon"><i class="mdui-icon material-icons">&#xe5d5;</i></a>
+        <a href="javascript:;" class="mdui-btn mdui-btn-icon"><i class="mdui-icon material-icons">&#xe5d4;</i></a>
+    </div>
+</header>
+<div id="left-drawer" class="mdui-drawer mdui-drawer-left mdui-color-white">
+    <div class="mdui-card">
+        <div class="mdui-card-media">
+            <img src="{{ "image/avatar_bg.jpg" | relURL}}"/>
+            <div class="mdui-card-media-covered">
+            <div class="mdui-card-primary">
+                <div class="mdui-card-primary-title mdui-clearfix">
+                    <img class="mdui-img-circle mdui-float-left" style="width:64px" src="{{ "image/avatar.jpg" | relURL}}"/>
+                    {{ with .Site.Params.Author }}<span class="mdui-float-right" style="line-height:64px;">{{ . }}</span>{{ end }}
+                </div>
+                {{ with .Site.Params.Description }}<div class="mdui-card-primary-subtitle">{{ . }}</div>{{ end }}
+            </div>
+            </div>
+        </div>
+    </div>
+    <div class="mdui-list">
+        <a class="mdui-list-item" href="{{ "categories/" | relLangURL }}">
+            <i class="mdui-list-item-icon mdui-icon material-icons">&#xe163;</i>
+            <div class="mdui-list-item-content">分类</div>
+        </a>
+        <a class="mdui-list-item" href="{{ "tags/" | relLangURL }}">
+            <i class="mdui-list-item-icon mdui-icon material-icons">&#xe872;</i>
+            <div class="mdui-list-item-content">标签</div>
+        </a>
+        <a class="mdui-list-item" href="#">
+            <i class="mdui-list-item-icon mdui-icon material-icons">&#xe168;</i>
+            <div class="mdui-list-item-content">关于我</div>
+        </a>
+    </div>
+</div>

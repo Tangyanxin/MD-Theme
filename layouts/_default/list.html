@@ -1,0 +1,7 @@
+{{ define "main" }}
+<div class="mdui-container mdui-typo mdui-p-b-5">
+    {{ range .Data.Pages }}
+        {{ .Render "summary"}}
+    {{ end }}
+</div>
+{{ end }}
